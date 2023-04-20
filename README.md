@@ -17,4 +17,5 @@ and execute at the command line on Linux machines without Python.
 The `jenkins` directory contains an example of the `Jenkinsfile` (i.e. Pipeline)
 you'll be creating yourself during the tutorial.
 
-Test
+** Launch Jenkins docker image
+docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
