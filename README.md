@@ -19,4 +19,11 @@ you'll be creating yourself during the tutorial.
 
 Launch Jenkins docker image
 
-docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
+To build the Dockerfile
+
+> docker build -t jenkins_docker .
+
+> sudo chmod 666 /var/run/docker.sock
+
+> docker run --rm -p 8080:8080 -p 4040:4040 -v /var/run/docker.sock:/var/run/docker.sock --name myjenkins jenkins_docker
+
