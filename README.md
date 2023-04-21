@@ -25,5 +25,6 @@ To build the Dockerfile
 
 > sudo chmod 666 /var/run/docker.sock
 
-> docker run --rm -p 8080:8080 -p 4040:4040 -v /var/run/docker.sock:/var/run/docker.sock --name myjenkins jenkins_docker
+> docker run  -u root -v /var/jenkins_home:/var/jenkins_home -v $(which docker):/usr/bin/docker -v /var/run/docker.sock:/var/run/docker.sock -p 8081:8080 -p 5001:5000 --name jenkins-docker --privileged jenkins_docker 
+
 
